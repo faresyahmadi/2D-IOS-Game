@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jgyga3jdbmvf"]
+
+[ext_resource type="Script" path="res://door_to_win.gd" id="1_4vuhy"]
+[ext_resource type="Texture2D" uid="uid://c1j7wjryfk072" path="res://Sunny-land-files/Graphical Assets/environment/Props/door-opened.png" id="1_r4blu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6bmf"]
+size = Vector2(45, 75)
+
+[node name="Door to win" type="Area2D"]
+script = ExtResource("1_4vuhy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(329, 145)
+shape = SubResource("RectangleShape2D_x6bmf")
+
+[node name="Door-opened" type="Sprite2D" parent="."]
+position = Vector2(330, 145)
+scale = Vector2(2.13636, 2.34848)
+texture = ExtResource("1_r4blu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

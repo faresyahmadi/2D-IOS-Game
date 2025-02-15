@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscekrcar4tb0"]
+
+[ext_resource type="AudioStream" uid="uid://d4ksvgq0fbxsf" path="res://Music by Pascal Belisle/platformer_level03.mp3" id="1_w1kiv"]
+[ext_resource type="Script" path="res://Global/Button.gd" id="2_w77mn"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_w1kiv")
+volume_db = -12.0
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1083.0
+offset_top = 16.0
+offset_right = 1132.0
+offset_bottom = 47.0
+text = "Mute
+"
+script = ExtResource("2_w77mn")

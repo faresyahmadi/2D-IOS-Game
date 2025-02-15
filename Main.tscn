@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0y2xmiwgo2r"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_bnwod"]
+[ext_resource type="PackedScene" uid="uid://nhe0nrnvji3n" path="res://BG.tscn" id="2_qnopk"]
+[ext_resource type="Texture2D" uid="uid://b2xd0tgn888gc" path="res://sunny-land/assets/sprites/title-screen.png" id="3_o4yu2"]
+[ext_resource type="PackedScene" uid="uid://cscekrcar4tb0" path="res://Global/BG_Music.tscn" id="4_ey2bn"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bnwod")
+
+[node name="Play game !" type="Button" parent="."]
+offset_left = 385.0
+offset_top = 198.0
+offset_right = 718.0
+offset_bottom = 301.0
+text = "Play Game !"
+
+[node name="Quit game !" type="Button" parent="."]
+offset_left = 389.0
+offset_top = 364.0
+offset_right = 720.0
+offset_bottom = 461.0
+text = "Quit Game !"
+
+[node name="BG" parent="." instance=ExtResource("2_qnopk")]
+
+[node name="Title-screen" type="Sprite2D" parent="."]
+position = Vector2(563, 125)
+scale = Vector2(1.86598, 2.10526)
+texture = ExtResource("3_o4yu2")
+
+[node name="MusicPlayer" parent="." instance=ExtResource("4_ey2bn")]
+
+[connection signal="pressed" from="Play game !" to="." method="_on_play_game__pressed"]
+[connection signal="pressed" from="Quit game !" to="." method="_on_quit_game__pressed"]
